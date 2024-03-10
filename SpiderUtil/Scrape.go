@@ -48,7 +48,12 @@ func ExecuteSpider(urls []string, cookieRaw string) ([]Question, error) {
 	})
 
 	c.OnHTML("div.jx_tmtit", func(e *colly.HTMLElement) {
-		title := strings.TrimSpace(e.Text)
+		//title := strings.TrimSpace(e.Text)
+
+		// 同时使用正则表达式去除序号和所有空格
+		re := regexp.MustCompile(`^\s*\d+、\s*|\s+`)
+		title := re.ReplaceAllString(e.Text, "")
+
 		// 检查题目是否已经存在
 		if _, exists := titleMap[title]; exists {
 			// 如果题目已存在，则跳过
