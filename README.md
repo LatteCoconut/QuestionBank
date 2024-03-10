@@ -3,12 +3,15 @@
 
 
 # MacOS 使用
-relaese 界面下载QuestionBank后，终端输入 
+release 界面下载QuestionBank后，终端输入 
 
 `chmod +x QuestionBank`
 
 `./QuestionBank`
 
+# Windows 使用
+release 界面下载QuestionBank.exe
+点击打开
 
 # 界面
 ![img.png](img.png)
