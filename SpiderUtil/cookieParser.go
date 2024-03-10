@@ -7,7 +7,7 @@ import (
 
 func ParseCookie(rawCookies string) (string, error) {
 	// 定义必须存在的cookie名称,"tgw_l7_route",
-	requiredKeys := []string{"username", "hd_uid", "client_ucToken", "JSESSIONID", "cdeluid"}
+	requiredKeys := []string{"username", "hd_uid", "JSESSIONID", "cdeluid"}
 
 	// 分割字符串为行
 	lines := strings.Split(rawCookies, "\n")
