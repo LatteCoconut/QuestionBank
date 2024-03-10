@@ -155,14 +155,14 @@ func exportQuestionsToPDF(questions []SpiderUtil.Question, filePath string) erro
 
 	for i, q := range questions {
 		currentY := pdf.GetY()
-		if currentY > 790 { // 以800为界限，需要根据实际内容调整
+		if currentY > 780 { // 以800为界限，需要根据实际内容调整
 			pdf.AddPage()
 		}
 		pdf.Br(10)
 		// 计算MultiCell需要的Rect
 		rect := &gopdf.Rect{W: 555, H: 30} // 宽度设置为页面宽度减去边距，高度暂时设为0
 
-		title := fmt.Sprintf("%d、%s", i+1, strings.SplitN(q.Title, "、", 2)[1])
+		title := fmt.Sprintf("%d、%s", i+1, q.Title)
 		_ = pdf.MultiCell(rect, title)
 		pdf.Br(5)
 
