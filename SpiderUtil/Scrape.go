@@ -71,7 +71,7 @@ func ExecuteSpider(urls []string, cookieRaw string) ([]Question, error) {
 				question.Options = append(question.Options, optionText)
 				return true // 继续遍历
 			} else {
-				answer := s.Find("span").First().Text()
+				answer := s.Find("span").Eq(1).Text()
 				re := regexp.MustCompile("[A-Za-z]+")
 				matches := re.FindString(answer)
 				question.Correct = matches
