@@ -31,7 +31,7 @@ func main() {
 	label := widget.NewLabel("Cookie")
 
 	urlsEntry := widget.NewEntry()
-	urlsEntry.SetPlaceHolder("输入你的错题页链接,多个则以英文逗号分隔...")
+	urlsEntry.SetPlaceHolder("输入你的答题记录页链接,多个则以英文逗号分隔...")
 	urlsLabel := widget.NewLabel("Urls")
 
 	// 创建一个无限进度条（加载动画）
